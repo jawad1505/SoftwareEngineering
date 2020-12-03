@@ -25,7 +25,7 @@ list of 8 elements you have to check 3 times, How? log 8 ==3, because 2^3 =8
 list of 1024 elements, you have to check 10 times, How? log 1024 = 10, because 2^10 = 1024
 
 ## Asymptotic Analysis
-
+a
 
 
 
