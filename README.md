@@ -35,8 +35,11 @@ Repo for understanding and practicing Core concepts
   * Sets
 
 # Algorithms
-* BFS
-* DFS
+* Fundamentals
+  * Stack
+  * Queue
+  * Bag
+  * Union Find
 * Sorting 
   * Merge Sort
   * Quick Sort
