@@ -11,18 +11,14 @@ class LinkedList:
         self.head = None
     
     def append(self, data):
-        """At end of LL"""
         new_node = Node(data)
-
         if self.head is None:       # if empty
             self.head = new_node 
             return                  # break if first entry
-        
-        last_node = self.head       # This implies we’re at the start of the linked list
-        
-        while last_node.nextNode:
-            last_node = last_node.nextNode
-        last_node.nextNode = new_node
+        cur = self.head       # This implies we’re at the start of the linked list
+        while cur.nextNode:
+            cur = cur.nextNode
+        cur.nextNode = new_node
 
     def print_list(self):
         cur_node = self.head    
@@ -182,8 +178,7 @@ class LinkedList:
             q.nextNode = self.head 
             self.head = p.nextNode 
             p.nextNode = None
-
-        
+       
     def reverse_iterative(self):
          
         # Set up current,previous, and next nodes
@@ -206,7 +201,6 @@ class LinkedList:
             cur  = nxt
 
         self.head = prev
-
 
     def reverse_recursive(self):
         def _reverse_recursive(cur, prev):
@@ -260,7 +254,6 @@ class LinkedList:
 
         self.head = new_head
         return self.head
-
 
     def remove_duplicates(self):
         cur = self.head
@@ -329,6 +322,7 @@ class LinkedList:
                 count +=1
             cur = cur.nextNode
         return count
+  
     def count_occurences_recursive(self, node, data):
         if not node:
             return 0 
@@ -337,14 +331,91 @@ class LinkedList:
         else:
             return self.count_occurences_recursive(node.next, data)
 
+    def is_palindrome(self):
+        pass
+
+    def move_tail_to_head(self):
+        if self.head and self.head.nextNode:
+            head = self.head
+            tail = None
+            
+            while head.nextNode:
+                tail  = head
+                head  = head.nextNode
+            #swap tail and head
+            head.nextNode = self.head
+            tail.nextNode = None
+            self.head = head
+
+    def sum_two_linked_lists(self, llist):
+        # if self.head and llist.head:
+            # initialize
+            p = self.head
+            q = llist.head
+
+            # create new sum LL
+            sum_llist = LinkedList()
+
+            carry = 0
+
+            # until p and q are none, continue
+            while p or q:
+
+                # if p is not none
+                if not p:
+                    i=0
+                # p is none 
+                else:
+                    print("p: ",p.data)
+                    i = p.data
+                
+                # if q is not none
+                if not q:
+                    j=0
+                
+                # q is none, last node
+                else:
+                    j = q.data
+                
+                # store the sum
+                s = i + j + carry
+                
+                # add to carry, get remainder, append to sum
+                if s >= 10:
+                    carry = 1
+                    remainder = s % 10
+                    sum_llist.append(remainder)
+                
+                else:
+                    carry = 0
+                    sum_llist.append(s)
+                
+                # p not none
+                if p:
+                    p = p.nextNode
+                # q not none
+                if q: 
+                    q = q.nextNode
+            # print new list
+            sum_llist.print_list()
 
 llist_1 = LinkedList()
+llist_2 = LinkedList()
 llist_1.append(1)
 llist_1.append(2)
 llist_1.append(3)
-llist_1.append(4)
-llist_1.append(5)
-llist_1.rotate(4)
+llist_1.append(0)
+
+llist_2.append(4)
+llist_2.append(5)
+llist_2.append(6)
+llist_1.print_list()
+print("list2")
+llist_2.print_list()
+print("sum")
+llist_1.sum_two_linked_lists(llist_2)
+# llist_1.rotate(4)
+# llist_1.move_tail_to_head()
 # print("count =",llist_1.count_occurances_iterative(5))
 # llist_2 = LinkedList()
 # llist_2.append(2)
@@ -355,7 +426,7 @@ llist_1.rotate(4)
 # llist_1.merged_sorted(llist_2)
 
 # llist.insert_after_node()
-llist_1.print_list()
+
 
 # llist_1.print_nth_from_last(4)
 
