@@ -1,35 +1,28 @@
-class Node:
-    def __init__(self, data) -> None:
-        self.data = data
-        self.next = None
+arr = [1, 9, 9]
+arr_len = len(arr) 
+for i in reversed(range(1, len(arr))):
+    print("i= ",i)
 
-class LinkedList:
-    def __init__(self) -> None:
-        self.head = None
-    
-    def append(self, data):
-        new_node = Node(data)
 
-        if self.head is None:
-            self.head = new_node
-            return
-        # if not empty
-        last_node = self.head
-        while last_node.next:
-            last_node = last_node.next
-        last_node.next = new_node
+# A1 = [1, 4, 9]
+# A2 = [9, 9, 9]
 
-    def print_list(self):
-        cur_node = self.head
-        while cur_node:
-            print(cur_node.data)
-            cur_node = cur_node.next
+# # s = ''.join(map(str, A))
+# # print(int(s) + 1)
 
-ll = LinkedList()
-ll.print_list()
-ll.append("A")
-ll.print_list()
-ll.append("B")
-ll.print_list()
-ll.append("C")
-ll.print_list()
+
+# def plus_one(A):
+#     A[-1] += 1
+#     for i in reversed(range(1, len(A))):
+#         if A[i] != 10:
+#             break
+#         A[i] = 0
+#         A[i-1] += 1
+#     if A[0] == 10:
+#         A[0] = 1
+#         A.append(0)
+#     return A
+
+
+# print(plus_one(A1))
+# print(plus_one(A2))
