@@ -1,1 +1,4 @@
-print("[" + str(2) + "," + str(3)+ "]")
+x = float('inf')
+p = 30
+
+print(min(x,p))
