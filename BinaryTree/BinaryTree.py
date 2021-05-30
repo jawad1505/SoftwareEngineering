@@ -86,6 +86,28 @@ class BinaryTree(object):
 #      F   Z       K
 #         / \       \
 #        D   I       G
+# tree = BinaryTree("A")
+
+# tree.root.left = Node("B")
+# tree.root.left.left  = Node("F")
+# tree.root.left.right = Node("Z")
+# tree.root.left.right.left  = Node("D")
+# tree.root.left.right.right = Node("I")
+
+# tree.root.right = Node("H")
+# tree.root.right.right = Node("K")
+# tree.root.right.right.right = Node("G")
+
+
+
+# Tree 3:
+#            A             
+#         /     \
+#        B       H
+#       / \       \
+#      F   Z       K
+#         / \     / \
+#        D   I   G   M
 tree = BinaryTree("A")
 
 tree.root.left = Node("B")
@@ -96,9 +118,9 @@ tree.root.left.right.right = Node("I")
 
 tree.root.right = Node("H")
 tree.root.right.right = Node("K")
-tree.root.right.right.right = Node("G")
+tree.root.right.right.right = Node("M")
+tree.root.right.right.left = Node("G")
 
-
-# print("Pre order= ",tree.print_tree("preorder"),"")
+print("Pre order= ",tree.print_tree("preorder"),"")
 # print("Post order= ",tree.print_tree("postorder"),"")
-print("In order= ",tree.print_tree("inorder"),"")
+# print("In order= ",tree.print_tree("inorder"),"")
