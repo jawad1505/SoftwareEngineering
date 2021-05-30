@@ -34,6 +34,27 @@ def maxProfit(prices):
 				
         return profit
 
+def profit(stock_prices):
+    
+    # Start minimum price marker at first price
+    min_stock_price = stock_prices[0]
+    
+    # Start off with a profit of zero
+    max_profit = 0
+    
+    for price in stock_prices:
+        
+        # Check to set the lowest stock price so far
+        min_stock_price = min(min_stock_price,price)
+        
+        # Check the current price against our minimum for a profit 
+        # comparison against the max_profit
+        comparison_profit = price - min_stock_price
+        
+        # Compare against our max_profit so far
+        max_profit = max(max_profit,comparison_profit)
+        
+    return max_profit
 # P = [900, 315, 275, 295, 260, 10, 290, 230, 255, 250, 600]
 P = [30, 35, 27, 90, 20]
 # P = [10,200,200,0,0,0,100]

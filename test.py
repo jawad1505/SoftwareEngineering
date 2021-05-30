@@ -1,23 +1,18 @@
-def test(x):
-    # print(x)
-    if  x == 0:
-        return -1
-    else:
-        # x -= 1
-        print("check ", x)
-        counter = x + test(x-2)
-        print("counter = ",counter)
-        return counter
-
-def fact(n):
-
-    print("n = ",n)
-    if n == 0:
-        return 1
+def helper(node, lower=float("-inf"), upper=float("inf")):
+ 
+    if not node:
+        return "uhu"
     
-
-    else:
-        return n * fact(n-1)
+    val = node
+    if val <= lower or val >= upper:
+        print("here")
+        return "yoo"
+    
+    if not helper(node, val, upper):
+        print("there")
+        return "booo"
         
-print(test(10))
     
+
+print(helper(10))
+
