@@ -145,8 +145,7 @@ class BinaryTree(object):
         return 1 + max(left_height, right_height)
 
 
-    def size_(self, node):
-        pass
+
  
 # Calculate height of binary tree:
 #       1
