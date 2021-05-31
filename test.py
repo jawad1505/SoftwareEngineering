@@ -1,18 +1,6 @@
-def helper(node, lower=float("-inf"), upper=float("inf")):
- 
-    if not node:
-        return "uhu"
-    
-    val = node
-    if val <= lower or val >= upper:
-        print("here")
-        return "yoo"
-    
-    if not helper(node, val, upper):
-        print("there")
-        return "booo"
-        
-    
-
-print(helper(10))
-
+def find_uppercase_recursive(input_str, idx=0):
+  if input_str[idx].isupper():
+    return input_str[idx]
+  if idx == len(input_str) - 1:
+    return "No uppercase character found"
+  return find_uppercase_recursive(input_str, idx+1)
