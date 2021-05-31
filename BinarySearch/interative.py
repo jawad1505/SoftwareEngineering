@@ -4,11 +4,11 @@ def binary_search_iterative(data, target):
 
     while low <= high:
         mid = (low + high) // 2
-        print(f'low={low}  high={high}')        
+        # print(f'low={low}  high={high}')        
 
         if target == data[mid]:
             return True
-        elif target < data[mid]:
+        elif data[mid] > target:
             high = mid - 1
         else:
             low = mid + 1
